@@ -15,6 +15,13 @@
 	<script data-senna-off="true" src="${javascript_folder}/owl.carousel.min.js" type="text/javascript"></script>
 	<script data-senna-off="true" src="${javascript_folder}/toggle-control-menu.js" type="text/javascript"></script>
 
+	<style>
+		#mi-icon-menu {
+			width: unset;
+			padding: 0 9px;
+		}
+	</style>
+
 </head>
 
 <body class="${css_class}">

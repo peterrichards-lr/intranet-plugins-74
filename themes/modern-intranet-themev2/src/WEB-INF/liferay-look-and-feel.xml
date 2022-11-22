@@ -14,6 +14,12 @@
       <setting configurable="false" key="show-site-name-default" value="true"/>
       <setting configurable="false" key="show-site-name-supported" value="true"/>
       <setting configurable="true" key="wrap-widget-page-content" type="checkbox" value="true"/>
+      <setting configurable="true" key="menu-logo-height" type="text" value="56"/>
+      <setting configurable="true" key="use-menu-logo-urls" type="checkbox" value="false"/>
+      <setting configurable="true" key="menu-collapsed-logo-url" type="text" value=""/>
+      <setting configurable="true" key="menu-expanded-logo-url" type="text" value=""/>
+      <setting configurable="true" key="menu-template-id" type="text" value="43813"/>
+      <setting configurable="true" key="menu-id" type="text" value="43248"/>
       <setting configurable="true" key="site-name" type="text" value=""/>
     </settings>
     <roles>

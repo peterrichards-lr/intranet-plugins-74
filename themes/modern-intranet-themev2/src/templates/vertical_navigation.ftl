@@ -36,9 +36,39 @@
 
 </div>
 
+<#if use_menu_logo_urls>
+    <style>
+        #mi-menu > a > img, #mi-icon-menu > span > img {
+            height: ${menu_logo_height}px;
+        }
+
+        #mi-icon-menu > span > img {
+            content: url(${menu_collapsed_logo_url}) / "${logo_description}";            
+        }
+
+        #mi-menu > a > img {
+            content: url(${menu_expanded_logo_url}) / "${logo_description}";
+        }
+    </style>
+<#else>
+    <style>
+        #mi-menu > a > img, #mi-icon-menu > span > img {
+            height: ${menu_logo_height}px;
+        }
+
+        #mi-icon-menu > span > img {
+            content: url(${themeDisplay.getCompanyLogo()}) / "${logo_description}";
+        }
+
+        #mi-menu > a > img {
+            content: url(${themeDisplay.getCompanyLogo()}) / "${logo_description}";
+        }
+    </style>
+</#if>
+
 <nav id="mi-icon-menu" class="flex-column">
     <span class="navbar-brand mb-5 mt-5">
-        <img height="56" src="${themeDisplay.getCompanyLogo()}" alt="" />
+        <img />
     </span>
     <#if nav_items?has_content>
         <ul id="mi-menu-icons" class="navbar-nav nav-stacked w-100 mb-5">	
@@ -75,30 +105,39 @@
 
 <nav id="mi-menu" class="navbar flex-column align-items-start monserrat">
     <a class="navbar-brand d-flex align-items-center mb-5 pl-5 mt-5" href="${themeDisplay.getURLHome()}">
-        <img height="56" src="${themeDisplay.getCompanyLogo()}" alt="" />
-        <#if site_name?has_content>
-            <h2 class="m-0 text-dark">${site_name}</h2>
-        </#if>
-        <#if !site_name?has_content>
-            <h2 class="m-0 text-dark">
-                ${htmlUtil.escape(themeDisplay.getLayout().getGroup().getDescriptiveName())}
-            </h2>
+        <img />
+        <#if !use_menu_logo_urls>
+            <#if site_name?has_content>
+                <h2 class="m-0 text-dark">${site_name}</h2>
+            </#if>
+            <#if !site_name?has_content>
+                <h2 class="m-0 text-dark">
+                    ${htmlUtil.escape(themeDisplay.getLayout().getGroup().getDescriptiveName())}
+                </h2>
+            </#if>
+            <div>
+                <img />
+            </div>
         </#if>
     </a>
     <#if layout.isPublicLayout()>
         <#assign ddmTemplateLocalService = serviceLocator.findService("com.liferay.dynamic.data.mapping.service.DDMTemplateLocalService")>
-        <#assign template = ddmTemplateLocalService.fetchDDMTemplate(43813)>
+        <#assign template = ddmTemplateLocalService.fetchDDMTemplate(menu_template_id)!>
         <#assign siteNavigationMenuLocalService = serviceLocator.findService("com.liferay.site.navigation.service.SiteNavigationMenuLocalService")>
-        <#assign navigationMenu = siteNavigationMenuLocalService.fetchSiteNavigationMenu(43248)>
+        <#assign navigationMenu = siteNavigationMenuLocalService.fetchSiteNavigationMenu(menu_id)!>
 
-        <@liferay_site_navigation["navigation-menu"]
-            ddmTemplateGroupId=template.groupId
-            ddmTemplateKey=template.templateKey
-            displayDepth=1
-            expandedLevels="auto"
-            rootItemType="absolute"
-            rootItemLevel=0
-            siteNavigationMenuId=navigationMenu.siteNavigationMenuId />
+        <#if template?has_content && navigationMenu?has_content>
+            <@liferay_site_navigation["navigation-menu"]
+                ddmTemplateGroupId=template.groupId
+                ddmTemplateKey=template.templateKey
+                displayDepth=1
+                expandedLevels="auto"
+                rootItemType="absolute"
+                rootItemLevel=0
+                siteNavigationMenuId=navigationMenu.siteNavigationMenuId />
+        <#else>
+            <p class="danger">Configiure menu Id and menu template Id</p>
+        </#if>
     <#else>
         <#if nav_items?has_content>
             <ul id="mi-menu-list" class="navbar-nav nav-stacked w-100 mb-5">
