@@ -6,7 +6,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	font-size: $navbar-font-size;
-	justify-content: space-between;
+	justify-content: stretch;
 	padding: $navbar-padding-y $navbar-padding-x;
 	position: relative;
 

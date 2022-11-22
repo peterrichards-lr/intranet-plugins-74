@@ -3,39 +3,6 @@
     current_index = 0
 />
 
-<#if nav_items?has_content>
-    <#list nav_items as nav_item>
-        <#if nav_item.isSelected() || nav_item.isChildSelected() >
-            <#if nav_item.hasChildren()>
-                <#assign
-                    show_secondary = true
-                    current_index = nav_item?index
-                />
-            </#if>
-            <#break>
-        </#if>
-    </#list>
-</#if>
-
-<div id="vertical-nav-wrapper" class="d-none ${show_secondary?string('has-secondary','')}">
-</div>
-
-<div class="mobile-menu container mt-2">	
-    
-    <button id="mobile-toggler" class="navbar-toggler navbar-toggler-right" type="button">
-        <@liferay_ui.icon icon="bars" markupView="lexicon" />
-    </button>
-
-    <#assign search_preferences = freeMarkerPortletPreferences.getPreferences({"portletSetupPortletDecoratorId": "barebone", "destination": "/search"}) />
-
-    <div class="mi-mob-search-bar mr-2">
-        <@liferay.search_bar default_preferences="${search_preferences}" />
-    </div>
-
-    <@liferay.user_personal_bar />
-
-</div>
-
 <#if use_menu_logo_urls>
     <style>
         #mi-menu > a > img, #mi-icon-menu > span > img {
@@ -65,6 +32,41 @@
         }
     </style>
 </#if>
+
+<#if nav_items?has_content>
+    <#list nav_items as nav_item>
+        <#if nav_item.isSelected() || nav_item.isChildSelected() >
+            <#if nav_item.hasChildren()>
+                <#assign
+                    show_secondary = true
+                    current_index = nav_item?index
+                />
+            </#if>
+            <#break>
+        </#if>
+    </#list>
+</#if>
+
+<div id="vertical-nav-wrapper" class="d-none ${show_secondary?string('has-secondary','')}">
+</div>
+
+<div class="mobile-menu container mt-2">	
+    
+    <button id="mobile-toggler" class="navbar-toggler navbar-toggler-right" type="button">
+        <@liferay_ui.icon icon="bars" markupView="lexicon" />
+    </button>
+
+    <#assign search_preferences = freeMarkerPortletPreferences.getPreferences({"portletSetupPortletDecoratorId": "barebone", "destination": "/search"}) />
+
+    <div class="mi-mob-search-bar mr-2">
+        <@liferay.search_bar default_preferences="${search_preferences}" />
+    </div>
+
+    <#if user_menu_position=='left'>
+        <@liferay.user_personal_bar />
+    </#if>
+
+</div>
 
 <nav id="mi-icon-menu" class="flex-column">
     <span class="navbar-brand mb-5 mt-5">
@@ -98,9 +100,11 @@
             </#list>
         </ul>
     </#if>
-    <div class="personal-bar mt-auto mb-4">
-        <@liferay.user_personal_bar />
-    </div>
+    <#if user_menu_position=='left'>
+        <div class="personal-bar mt-auto mb-4">
+            <@liferay.user_personal_bar />
+        </div>
+    </#if>
 </nav>
 
 <nav id="mi-menu" class="navbar flex-column align-items-start monserrat">
@@ -136,7 +140,9 @@
                 rootItemLevel=0
                 siteNavigationMenuId=navigationMenu.siteNavigationMenuId />
         <#else>
-            <p class="danger">Configiure menu Id and menu template Id</p>
+            <p style="color: var(--danger);">Configure menu Id and menu template Id</p>
+            <p>${menu_template_id}</p>
+            <p>${menu_id}</p>
         </#if>
     <#else>
         <#if nav_items?has_content>
@@ -157,9 +163,11 @@
             </ul>
         </#if>
     </#if>
-    <div class="personal-bar pl-6 mt-auto mb-4">
-        <@liferay.user_personal_bar />
-    </div>
+    <#if user_menu_position=='left'>
+        <div class="personal-bar pl-6 mt-auto mb-4">
+            <@liferay.user_personal_bar />
+        </div>
+    </#if>
 </nav>
 
 <#if show_secondary>

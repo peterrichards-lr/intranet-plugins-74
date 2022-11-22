@@ -48,7 +48,9 @@
 						portletProviderClassName="com.liferay.portal.kernel.servlet.taglib.ui.LanguageEntry"
 					/> 
 				</div>
-				<div class="mr-2"><@liferay.user_personal_bar /></div>
+				<#if user_menu_position=='top'>
+					<div class="mr-2"><@liferay.user_personal_bar /></div>
+				</#if>
 				<#assign preferences = freeMarkerPortletPreferences.getPreferences({"portletSetupPortletDecoratorId": "barebone", "destination": "/search"}) />
 				<@liferay.search_bar default_preferences="${preferences}" />
 			</div>

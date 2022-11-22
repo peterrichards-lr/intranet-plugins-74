@@ -11,6 +11,7 @@
 	menu_template_id = getterUtil.getLong(themeDisplay.getThemeSetting("menu-template-id"))
 	menu_id = getterUtil.getLong(themeDisplay.getThemeSetting("menu-id"))
 	show_control_menu = getterUtil.getBoolean(sessionClicks.get(request, "SHOW_CONTROL_MENU", "true"))
+	user_menu_position = getterUtil.getString(themeDisplay.getThemeSetting("user-menu-position"))
 />
 
 <#if wrap_widget_page_content && ((layout.isTypeContent() && themeDisplay.isStateMaximized()) || (layout.getType() == "portlet"))>
