@@ -6,7 +6,7 @@
   <theme id="modern-intranet-themev2" name="Modern Intranet Theme v2">
     <template-extension>ftl</template-extension>
     <settings>
-      <setting configurable="false" key="color-palette" value="primary,success,danger,warning,info,dark,gray-dark,secondary,light,lighter,white"/>
+      <setting configurable="false" key="color-palette" value="primary,primary-1,primary-2,primary-3,primary-4,success,danger,warning,info,dark,gray-dark,secondary,secondary-1,secondary-2,secondary-3,secondary-4,secondary-5,secondary-6,secondary-7,secondary-8,light,lighter,white"/>
       <setting configurable="true" key="show-footer" type="checkbox" value="true"/>
       <setting configurable="true" key="show-header" type="checkbox" value="true"/>
       <setting configurable="true" key="show-header-search" type="checkbox" value="true"/>

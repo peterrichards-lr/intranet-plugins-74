@@ -154,7 +154,7 @@
 				{
 					"frontendTokens": [
 						{
-							"defaultValue": "#0b5fff",
+							"defaultValue": "#5B1F69",
 							"editorType": "ColorPicker",
 							"label": "primary",
 							"mappings": [
@@ -167,7 +167,59 @@
 							"type": "String"
 						},
 						{
-							"defaultValue": "#6b6c7e",
+							"defaultValue": "#5B1F69",
+							"editorType": "ColorPicker",
+							"label": "primary-1",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "primary-1"
+								}
+							],
+							"name": "primaryColor1",
+							"type": "String"
+						},
+						{
+							"defaultValue": "#A90061",
+							"editorType": "ColorPicker",
+							"label": "primary-2",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "primary-2"
+								}
+							],
+							"name": "primaryColor2",
+							"type": "String"
+						},
+						{
+							"defaultValue": "#002855",
+							"editorType": "ColorPicker",
+							"label": "primary-3",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "primary-3"
+								}
+							],
+							"name": "primaryColor3",
+							"type": "String"
+						},
+						{
+							"defaultValue": "#0b5fff",
+							"editorType": "ColorPicker",
+							"label": "primary-4",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "primary-4"
+								}
+							],
+							"name": "primaryColor4",
+							"type": "String"
+						},
+						{
+							"defaultValue": "#A90061",
 							"editorType": "ColorPicker",
 							"label": "secondary",
 							"mappings": [
@@ -177,6 +229,109 @@
 								}
 							],
 							"name": "secondaryColor",
+							"type": "String"
+						},
+						{
+							"defaultValue": "#7A2182",
+							"editorType": "ColorPicker",
+							"label": "secondary-1",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "secondary-1"
+								}
+							],
+							"name": "secondaryColor1",
+							"type": "String"
+						},
+						{
+							"defaultValue": "#D71920",
+							"editorType": "ColorPicker",
+							"label": "secondary-2",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "secondary-2"
+								}
+							],
+							"name": "secondaryColor2",
+							"type": "String"
+						},
+						{
+							"defaultValue": "#FB4F14",
+							"editorType": "ColorPicker",
+							"label": "secondary-3",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "secondary-3"
+								}
+							],
+							"name": "secondaryColor3",
+							"type": "String"
+						},
+						{
+							"defaultValue": "#EEAF00",
+							"editorType": "ColorPicker",
+							"label": "secondary-4",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "secondary-4"
+								}
+							],
+							"name": "secondaryColor4",
+							"type": "String"
+						},
+						{
+							"defaultValue": "#007DBA",
+							"editorType": "ColorPicker",
+							"label": "secondary-5",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "secondary-5"
+								}
+							],
+							"name": "secondaryColor5",
+							"type": "String"
+						},
+						{
+							"defaultValue": "#004634",
+							"editorType": "ColorPicker",
+							"label": "secondary-6",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "secondary-6"
+								}
+							],
+							"name": "secondaryColor6",
+							"type": "String"
+						},						{
+							"defaultValue": "#00A246",
+							"editorType": "ColorPicker",
+							"label": "secondary-7",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "secondary-7"
+								}
+							],
+							"name": "secondaryColor7",
+							"type": "String"
+						},
+						{
+							"defaultValue": "#84BD00",
+							"editorType": "ColorPicker",
+							"label": "secondary-8",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "secondary-8"
+								}
+							],
+							"name": "secondaryColor8",
 							"type": "String"
 						},
 						{
