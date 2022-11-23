@@ -92,14 +92,14 @@ $green: if($enable-lexicon-flat-colors, #9be169, #287d3d) !default;
 $teal: if($enable-lexicon-flat-colors, #50d2a0, #20c997) !default;
 $cyan: if($enable-lexicon-flat-colors, #5fc8ff, #17a2b8) !default;
 
-$primary: $purple !default;
+$primary: #5b1f69 !default;
 $primary-d1: darken($primary, 5.1) !default;
 $primary-d2: darken($primary, 10) !default;
 $primary-l1: lighten($primary, 22.94) !default;
 $primary-l2: lighten($primary, 32.94) !default;
 $primary-l3: lighten($primary, 44.9) !default;
 
-$secondary: $gray-600 !default;
+$secondary: #A90061 !default;
 $secondary-d1: darken(saturate($secondary, 4.82), 20) !default;
 $secondary-d2: darken(saturate($secondary, 5.36), 23.92) !default;
 $secondary-l1: lighten(

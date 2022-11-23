@@ -140,9 +140,7 @@
                 rootItemLevel=0
                 siteNavigationMenuId=navigationMenu.siteNavigationMenuId />
         <#else>
-            <p style="color: var(--danger);">Configure menu Id and menu template Id</p>
-            <p>${menu_template_id}</p>
-            <p>${menu_id}</p>
+            <div class="d-flex" style="color: var(--danger);">Configure menu Id and menu template Id</div>
         </#if>
     <#else>
         <#if nav_items?has_content>

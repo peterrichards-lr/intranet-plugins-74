@@ -41,19 +41,18 @@
 		<div class="${portal_content_css_class} flex-fill pr-lg-6 pr-md-0 pr-sm-0" id="content">
 			<div class="mi-search-bar mt-3 d-flex">
 				<#assign default_preferences = freeMarkerPortletPreferences.getPreferences("portletSetupPortletDecoratorId", "barebone") />
+				<#assign preferences = freeMarkerPortletPreferences.getPreferences({"portletSetupPortletDecoratorId": "barebone", "destination": "/search"}) />
+				<@liferay.search_bar default_preferences="${preferences}" />
+				<#if user_menu_position=='top'>
+					<div class="mr-2"><@liferay.user_personal_bar /></div>
+				</#if>
 				<div class="mr-2">
 					<@liferay_portlet["runtime"]
 						defaultPreferences=default_preferences
 						portletProviderAction=portletProviderAction.VIEW
 						portletProviderClassName="com.liferay.portal.kernel.servlet.taglib.ui.LanguageEntry"
 					/> 
-				</div>
-				<#if user_menu_position=='top'>
-					<div class="mr-2"><@liferay.user_personal_bar /></div>
-				</#if>
-				<#assign preferences = freeMarkerPortletPreferences.getPreferences({"portletSetupPortletDecoratorId": "barebone", "destination": "/search"}) />
-				<@liferay.search_bar default_preferences="${preferences}" />
-			</div>
+				</div>			</div>
 
 			<#if selectable>
 				<@liferay_util["include"] page=content_include />
