@@ -3,35 +3,33 @@
     current_index = 0
 />
 
+<style>
 <#if use_menu_logo_urls>
-    <style>
-        #mi-menu > a > img, #mi-icon-menu > span > img {
-            height: ${menu_logo_height}px;
-        }
+    #mi-menu > a > img, #mi-icon-menu > span > img {
+        height: ${menu_logo_height}px;
+    }
 
-        #mi-icon-menu > span > img {
-            content: url(${menu_collapsed_logo_url}) / "${logo_description}";            
-        }
+    #mi-icon-menu > span > img {
+        content: url(${menu_collapsed_logo_url}) / "${logo_description}";            
+    }
 
-        #mi-menu > a > img {
-            content: url(${menu_expanded_logo_url}) / "${logo_description}";
-        }
-    </style>
+    #mi-menu > a > img {
+        content: url(${menu_expanded_logo_url}) / "${logo_description}";
+    }
 <#else>
-    <style>
-        #mi-menu > a > img, #mi-icon-menu > span > img {
-            height: ${menu_logo_height}px;
-        }
+    #mi-menu > a > img, #mi-icon-menu > span > img {
+        height: ${menu_logo_height}px;
+    }
 
-        #mi-icon-menu > span > img {
-            content: url(${themeDisplay.getCompanyLogo()}) / "${logo_description}";
-        }
+    #mi-icon-menu > span > img {
+        content: url(${themeDisplay.getCompanyLogo()}) / "${logo_description}";
+    }
 
-        #mi-menu > a > img {
-            content: url(${themeDisplay.getCompanyLogo()}) / "${logo_description}";
-        }
-    </style>
+    #mi-menu > a > img {
+        content: url(${themeDisplay.getCompanyLogo()}) / "${logo_description}";
+    }
 </#if>
+</style>
 
 <#if nav_items?has_content>
     <#list nav_items as nav_item>

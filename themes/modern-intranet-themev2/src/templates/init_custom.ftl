@@ -4,14 +4,14 @@
 	show_header_search = getterUtil.getBoolean(themeDisplay.getThemeSetting("show-header-search"))
 	wrap_widget_page_content = getterUtil.getBoolean(themeDisplay.getThemeSetting("wrap-widget-page-content"))
 	site_name = getterUtil.getString(themeDisplay.getThemeSetting("site-name"))
-	menu_logo_height = getterUtil.getLong(themeDisplay.getThemeSetting("menu-logo-height"))
+	menu_logo_height = getterUtil.getLong(themeDisplay.getThemeSetting("menu-logo-height"), 56)
 	use_menu_logo_urls = getterUtil.getBoolean(themeDisplay.getThemeSetting("use-menu-logo-urls"))
 	menu_collapsed_logo_url = getterUtil.getString(themeDisplay.getThemeSetting("menu-collapsed-logo-url"))
 	menu_expanded_logo_url = getterUtil.getString(themeDisplay.getThemeSetting("menu-expanded-logo-url"))
-	menu_template_id = getterUtil.getLong(themeDisplay.getThemeSetting("menu-template-id"))
-	menu_id = getterUtil.getLong(themeDisplay.getThemeSetting("menu-id"))
+	menu_template_id = getterUtil.getLong(themeDisplay.getThemeSetting("menu-template-id"), 43813)
+	menu_id = getterUtil.getLong(themeDisplay.getThemeSetting("menu-id"), 43248)
 	show_control_menu = getterUtil.getBoolean(sessionClicks.get(request, "SHOW_CONTROL_MENU", "true"))
-	user_menu_position = getterUtil.getString(themeDisplay.getThemeSetting("user-menu-position"))
+	user_menu_position = getterUtil.getString(themeDisplay.getThemeSetting("user-menu-position"), "top")
 />
 
 <#if wrap_widget_page_content && ((layout.isTypeContent() && themeDisplay.isStateMaximized()) || (layout.getType() == "portlet"))>
